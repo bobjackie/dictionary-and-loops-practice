@@ -36,12 +36,45 @@
     #    - Grade Level
     #    - Primary Email
     #    - Secondary Email
+import student_data2
+cps = input("Enter CPS ID: ")
+first_name = input("Enter First name: ")
+last_name = input("Enter Last name: ")
+middle_name = input("Enter Middle name: ")
+homeroom = input("Enter homeroom:")
+grade_level = input("Enter Grade level: ")
+primary_email = input("Enter Primary email: ")
+secondary_email = input("Enter Secondary email: ")
+
 
 # 2. Combine the First and Last name into this format:
-    #    "Last, First"  
+    #    "Last, First" 
+
+print(f"{last_name}, {first_name}")
 
 # 3. Store all of the new information into ONE dictionary
     #    that matches the structure of the existing student data.
+
+for student in student_data2.students:
+    if student["CPSID"] == int(cps):
+        print("Error: CPS ID already taken. Student not added.")
+        break
+else:
+    new_student = {
+        "CPSID": int(cps),
+        "Combo,Name": f"{last_name}, {first_name}",
+        "LName": last_name,
+        "FName": first_name,
+        "MName": middle_name,
+        "HR": homeroom,
+        "GL": int(grade_level),
+        "Email": [primary_email, secondary_email]
+    }
+    student_data2.students.append(new_student)
+    print("Student added successfully!")
+    print(f"Total number of students: {len(student_data2.students)}")
+    print("Newly added student record:")
+    print(new_student)
 
 # 4. Add (append) that new dictionary into the main students list.
 
