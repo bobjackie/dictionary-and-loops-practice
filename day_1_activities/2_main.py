@@ -43,11 +43,18 @@ import student_data
 
 # print(student_data.students)
 students = student_data.students
-print(len(students))
-print(students[0]['Combo,Name'])
-print(students[0]['Email'][0])
-print(students[0]['Email'][1])
+#print(len(students))
+#print(students[0]['Combo,Name'])
+#print(students[0]['Email'][0])
+#print(students[0]['Email'][1])
+print(students[1]['CPSID'])
+print(students[1]['Email'][0])
+print(students[1]['GL'])
 
+print(students[-1]['LName'])
+print(students[-1]['Email'][0])
+print(students[-1]['GL'])
+print(students[-1]['HR'])
 # What is being counted?
 
 # If the output is 36, what does that tell you?
@@ -68,11 +75,25 @@ print(students[0]['Email'][1])
 #and printing the name and email of the students
 #we are also printing a line of underscores to separate the students
 #we are also printing a line of underscores to separate the students
-for student in students:
-    print(student['Combo,Name'])
-    print(student['Email'][0])
-    print(student['Email'][1])
-    print("_"*25)
+# for student in students:
+#     print(student['Combo,Name'])
+#     print(student['Email'][0])
+#     print(student['Email'][1])
+#     print(student['CPSID'])
+#     print(student['GL'])
+#     print(student['HR'])
+#     if student['GL'] >= 10:
+#         print("Student can go offcampus")
+#     if student['LName'][0] == "R":
+#         print("Your name starts with R ")
+#         print(student['Combo,Name'])
+#         print(student['HR'])
+#     if student['LName'][0] == "L":
+#         break 
+
+#     print("_"*25)
+
+
 
 # What does the loop variable student represent on each pass?
 
@@ -92,7 +113,8 @@ name = input("what is you name?")
 for student in students:
     if name == student['Combo,Name']:
         print(student['Combo,Name'])
-        print("this works")
+    print("this works")
+    
 
 # What is the goal of this search?
 
